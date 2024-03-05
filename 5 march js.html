@@ -1,0 +1,129 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <table>
+
+
+        </table>
+
+   <script>
+   
+
+  fetch("https://fakestoreapi.com/products",{
+
+  
+    mathod:"get"
+
+  }).then((val)=>{
+    return val.json()
+
+
+  }).then((val)=>{
+
+    
+
+    var a=document.getElementsByTagName("table");
+    a[0].setAttribute("style","border:2px solid");
+   
+
+     for(i=0;i<val.length;i++){
+
+    var tr=document.createElement("tr");
+    
+
+    var td=document.createElement("th")
+    td.style.border="1px solid"
+
+
+    td.innerText=val[i].id
+    tr.appendChild(td);
+    a[0].appendChild(tr)
+
+    var td1=document.createElement("td")
+    td1.style.border="1px solid"
+    td1.innerText=val[i].title
+    
+
+    tr.appendChild(td1)
+
+    var td2=document.createElement("td")
+    td2.style.border="1px solid"
+    td2.innerText=val[i].price
+    tr.appendChild(td2)
+    
+    
+
+
+    var td2=document.createElement("td")
+    td2.style.border="1px solid"
+    td2.innerText=val[i].description
+    tr.appendChild(td2)
+
+    var td2=document.createElement("td")
+    td2.style.border="1px solid"
+    td2.innerText=val[i].category
+    tr.appendChild(td2)
+
+    var td2=document.createElement("td")
+    td2.style.border="1px solid"
+
+    var imgg=document.createElement("img")
+    imgg.setAttribute("src",val[i].image)
+    imgg.setAttribute("style","width:200px;height:200px")
+
+    td2.appendChild(imgg)
+
+    tr.appendChild(td2)
+
+    tr.appendChild(td2)
+
+    var td2=document.createElement("td")
+    td2.style.border="1px solid"
+    td2.innerText=val[i].rating.rate
+    tr.appendChild(td2)
+
+    
+
+  
+     }
+    
+
+
+
+
+    
+    
+
+    // console.log(val);
+    // var arr=[];
+    // for(i=0;i<val.length;i++){
+
+    //     if(val[i].price){
+
+    //         arr.push(val[i])
+    //     }
+    // }
+
+    // console.log(arr);
+
+
+  })
+
+
+
+   </script>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
